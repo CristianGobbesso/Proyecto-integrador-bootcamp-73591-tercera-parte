@@ -57,7 +57,7 @@ const remove = async (req, res) => {
 
     try {
         const productoEliminado = await models.eliminarProducto(id)
-        res.json(productoEliminado)
+        res.json(handleMongoId(productoEliminado))
     } catch (error) {
         console.log(error)
         res.status(500).json({ mensaje: 'No se pudo borrar el producto'})
