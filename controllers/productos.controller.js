@@ -28,7 +28,7 @@ const create = async (req, res) => {
 
     try {
         const productoGuardado = await models.crearUnProducto(productoACrear)
-        res.status(201).json(productoGuardado)
+        res.status(201).json(handleMongoId(productoGuardado))
     } catch (error) {
         console.log(error)
         res.status(500).json({ mensaje: 'Algo falló, no se pudo guardar el producto'})
@@ -44,7 +44,7 @@ const update = async (req, res) => {
 
     try {
         const productoEditado = await models.editarUnProducto(productoAEditar)
-        res.json(productoEditado)
+        res.json(handleMongoId(productoEditado))
     } catch (error) {
         console.log(error)
         res.status(500).json({ mensaje: 'No se pudo editar el producto solicitado'})
