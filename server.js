@@ -8,12 +8,14 @@ import connection from './utils/connection.js'
 import routerProductos from './routers/productos.router.js'
 import routerUsuarios from './routers/usuarios.router.js'
 import routerUploads from './routers/uploads.router.js'
+import routerCarrito from './routers/carrito.router.js'
 
 // ! Constantes
 const app = express()
 const PORT = process.env.PORT // NO SE CARGA EN EL REMOTO la variable PORT (Para que render elija cual puerto usar)
-//const URI_DB = process.env.URI_LOCAL
+
 const URI_DB = process.env.URI_REMOTA
+//const URI_DB = process.env.URI_LOCAL
 const URL_FRONT = process.env.URL_FRONTEND_CORS
 //console.log(URI_DB)
 
@@ -31,6 +33,7 @@ app.use(cors(corsConfig)) // cors() -> Todos los origenes pueden acceder
 app.use('/api/v1/productos', routerProductos)
 app.use('/api/v1/usuarios', routerUsuarios)
 app.use('/api/v1/uploads', routerUploads)
+app.use('/api/v1/carrito', routerCarrito)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
