@@ -5,6 +5,15 @@ import handleMongoId from '../utils/handle-mongo-id.js'
 const getAll = async (req, res) => {
     try {
         const productos = await models.obtenerTodosLosProductos()
+
+        //prueba
+        productos.forEach(producto => {
+            if (producto.foto) {
+                producto.foto = `${process.env.URL_FRONTEND_CORS}/uploads/${producto.foto}`;
+            }
+        });
+
+
         res.json(handleMongoId(productos))
     } catch (error) {
         console.log(error)
@@ -16,6 +25,12 @@ const getOne = async (req, res) => {
     const id = req.params.id
     try {
         const producto = await models.obtenerUnProducto(id)
+
+        //prueba 
+        if (producto && producto.foto) {
+            producto.foto = `${process.env.URL_FRONTEND_CORS}/uploads/${producto.foto}`;
+        }
+
         res.json(handleMongoId(producto))
     } catch (error) {
         console.log(error)
