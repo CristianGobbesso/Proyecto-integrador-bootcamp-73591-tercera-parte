@@ -12,12 +12,12 @@ import routerCarrito from './routers/carrito.router.js'
 
 // ! Constantes
 const app = express()
-const PORT = process.env.PORT // NO SE CARGA EN EL REMOTO la variable PORT (Para que render elija cual puerto usar)
+const PORT = process.env.PORT 
 
 const URI_DB = process.env.URI_REMOTA
 //const URI_DB = process.env.URI_LOCAL
 const URL_FRONT = process.env.URL_FRONTEND_CORS
-//console.log(URI_DB)
+
 
 // ! Configuraciones
 const corsConfig = {
