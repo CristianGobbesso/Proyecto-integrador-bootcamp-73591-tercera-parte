@@ -28,6 +28,9 @@ const corsConfig = {
 app.use(express.json()) // Traduce a Express el objeto que llega por el body
 app.use(express.static(path.join('public'))) // /public
 app.use(cors(corsConfig)) // cors() -> Todos los origenes pueden acceder
+app.use('/uploads', express.static(path.join('public/uploads'))) // agrega las imagenes al server
+
+
 
 // ! Rutas
 app.use('/api/v1/productos', routerProductos)
