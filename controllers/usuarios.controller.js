@@ -13,14 +13,14 @@ const create = async (req, res) => {
 
     const { nombre, correo, password, confirm_password } = nuevoUsuario
 
-    if ( password !== confirm_password ) {
+    if (password !== confirm_password) {
         console.log('La contraseñas no coinciden')
         return res.status(500).json({
             mensaje: 'La contraseñas no coinciden'
         })
     }
 
-    
+
 
     try {
         const usuarioCreado = await models.crearUnUsuario(nuevoUsuario)
