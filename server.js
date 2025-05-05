@@ -12,7 +12,7 @@ import routerCarrito from './routers/carrito.router.js'
 
 // ! Constantes
 const app = express()
-const PORT = process.env.PORT 
+const PORT = process.env.PORT
 
 const URI_DB = process.env.URI_REMOTA
 //const URI_DB = process.env.URI_LOCAL
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 
 // ! Arranque del servidor
 app.listen(PORT, (err) => {
-    if (err) throw new Error('No se pudo levantar el servidor')
-    console.log(`Servidor funcionando en: http://localhost:${PORT}`)
-    connection(URI_DB)
+  if (err) throw new Error('No se pudo levantar el servidor')
+  console.log(`Servidor funcionando en: http://localhost:${PORT}`)
+  connection(URI_DB)
 })
