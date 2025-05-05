@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-// ! CREAMOS EL ESQUEMA
+//   ESQUEMA
 
 
 const carritoSchema = mongoose.Schema(
@@ -13,7 +13,7 @@ const carritoSchema = mongoose.Schema(
     }
 )
 
-// ! A partir del Schema creo el Modelo
+
 const CarritoModel = mongoose.model('carritos', carritoSchema)
 
 // --------------------------------------------------------------------
@@ -29,7 +29,7 @@ const crearCarrito = async (carrito) => {
         return carritoGuardado
         
     } catch (error) {
-        // console.log('No se pudo crear el carrito', error)
+        
         throw error
     }
 
