@@ -1,17 +1,4 @@
-
-/* elemento = {
-    _id: 'ObjectId',
-    nombre: 'Nombre',
-} */
-
-/* elemento = [
-    {
-
-    },
-    {
-
-    }
-] */
+// cambio de _id a id
 
 const handleMongoId = (elemento) => { // elemento -> un documento | un array de documentos
     // elemento -> Va a ser un objeto mongoose --> métodos, funciones 
