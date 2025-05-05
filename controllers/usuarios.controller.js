@@ -20,7 +20,7 @@ const create = async (req, res) => {
         })
     }
 
-    // TODO: controlar si el usuario con el correo enviado ya existe.
+    
 
     try {
         const usuarioCreado = await models.crearUnUsuario(nuevoUsuario)
