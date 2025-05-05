@@ -9,9 +9,7 @@ const uploadImagen = (req, res) => {
         })
     }
 
-    //console.log(req.protocol) // http o https
-    //console.log(req.get('host')) // localhost:8080
-    //console.log(imagen.filename) // nombre del archivo
+
 
     const urlCompletaBack = `${req.protocol}://${req.get('host')}/uploads/${imagen.filename}`
 
