@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-
+// conexion mongoose 
 const connection = async (uri) => {
 
     try {
